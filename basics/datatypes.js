@@ -1,4 +1,4 @@
-/* DATATYpes 
+/* DATATYPES 
 1. null => standalone value or reprents an empty set
 2. undefined => the value is not assigned yet
 3. number => positive and negative folating pint number ranges between -(2^53 -1) to 2^53 -1
