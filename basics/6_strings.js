@@ -57,11 +57,7 @@ const score=50
         const str3="himanshu-lamba-223";
         console.log(str3.split('-'));   return [ 'himanshu', 'lamba', '223' ]
 
-
-
 */
-
-
 
 //note string primitive and string objects give different result by using eval()
 const num="2+2";
