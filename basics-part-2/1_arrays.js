@@ -2,7 +2,7 @@
 //array copy operation create shallow copies.
 //A shallow copy of an object is a copy whose properties share the same references
 // as those of the source object from which the copy was made(changes made in copy are reflected in the source object).
-//whereas deep copy does share same references as those of source object
+//whereas deep copy does not share same references as those of source object
 
 //syntax
 const arr1=[1,2,3,4,5];
