@@ -85,3 +85,5 @@ const language=[
 language.forEach( (value)=>{
     console.log(value.LanguageName);
 })
+
+//Note : for-each loop does not return any value gives undefined if we stor the loop in a variable
