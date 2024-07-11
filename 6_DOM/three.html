@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM third part</title>
+</head>
+<body style = "background-color: black; color:#fff;">
+    
+</body>
+
+<script>
+    const div = document.createElement('div');
+    console.log(div);
+    //set properties to this div
+    div.className="firstDiv"
+    div.id=Math.round(Math.random() * 10 +1);
+    div.style.backgroundColor="yellow";
+    div.style.color= "black";
+    //div.innerText = "Himanshu Lamba";
+     //or we use another method for text
+    const text = document.createTextNode("Himanshu Lamba");
+    div.appendChild(text);
+    //to generate or attach this document
+    document.body.appendChild(div);
+</script>
+</html>
+
