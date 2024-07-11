@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fourth Part of DOM</title>
+</head>
+<body style = "background-color: black; color:#fff;">
+    <ul class="language">
+        <li>javascript</li>
+    </ul>
+</body>
+<script>
+    //to add another list
+    function addLanguage(langName){
+        const li = document.createElement('li');
+        li.innerHTML = `${langName}`;
+        document.querySelector('.language').appendChild(li);
+    }
+    addLanguage("python"); //whenever this fun executes it traverses the whole tree to appent the element to last
+    addLanguage("JAVA");
+
+    //optimized approach
+    function addLangOptimized (langName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName));
+        document.querySelector('.language').appendChild(li);
+    } 
+    addLangOptimized("rust");
+    addLangOptimized("go");
+
+    //edit  elements
+    const secondLang = document.querySelector("li:nth-child(2)");
+    const newLi = document.createElement('li');
+    newLi.textContent = "mojo";
+    secondLang.replaceWith(newLi);
+
+    //another example
+    const  firstlang = document.querySelector("li:first-child");
+    // const newli = document.createElement('li');
+    // newli.textContent = "typeScript";
+    // firstlang.replaceWith(newli);\
+    //or
+    firstlang.outerHTML='<li>TypeScript</li>';
+
+    //remove element
+    document.querySelector("li:last-child").remove();
+
+</script>
+</html>
