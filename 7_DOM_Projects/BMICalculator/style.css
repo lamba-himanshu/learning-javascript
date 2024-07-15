@@ -1,0 +1,78 @@
+.container{
+    background-color:#b5fa5b63;
+    margin:0px auto 100px;
+    width:800px;
+    height:550px;
+    text-align: center;
+    color:#2c5f2d ;
+}
+
+#age{
+    width:100px;
+    height : 25px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+#age-label{
+    margin-left: 60px;
+    margin-right: 10px;
+}
+#heightTextBox
+{
+    width:200px;
+    height : 25px;
+    margin-bottom: 10px;
+    margin-left:10px;
+}
+
+#weightTextBox{
+    width:200px;
+    height : 25px;
+    margin-bottom: 20px;
+    margin-left:10px;
+}
+#result{
+    width:90px;
+    height : 25px;
+    margin-bottom: 20px;
+    margin-left:10px;
+}
+label{
+    font-weight: 500;
+}
+
+button{
+    margin-right:10px;
+    height:30px;
+    width:150px;
+    border:solid #2c5f2d 1px;
+    border-radius: 10px;
+    font-size: 1rem;
+    
+}
+
+h1{
+    padding-top : 20px;
+    padding-bottom: 25px;
+}
+
+h3{
+    margin-top: 50px;
+ 
+}
+ul{
+    /* margin:0;
+    padding:0; */
+    list-style-position: inside; 
+}
+li {
+    text-align: left; /* Align text to left for better readability */
+    margin-left: 250px;
+    padding: 0;
+}
+#result{
+    display: inline-block;
+    height: 25px;
+    width: 100px;
+    background-color: aliceblue;
+}
