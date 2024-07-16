@@ -39,4 +39,6 @@ console.log(currTimeStamp); //return number value in milli seconds from 1970 til
 //console.log(tommDate.getTime()); //return a value in milli seconds
 // to get time in seconds
 console.log(Math.floor(currTimeStamp/1000));
+const date=new Date();
+console.log(date.toLocaleTimeString());
 
