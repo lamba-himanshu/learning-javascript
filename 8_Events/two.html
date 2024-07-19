@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Async Code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script> 
+    //setTimeout accepts a handler(function without name or a reference of function) and a time in ms after which the task is to be performed
+
+    // setTimeout(function(){
+    //     console.log("himanshu");
+    // },2000)  //2000 is timeout in millisecond
+
+    //or
+
+    const name = function(){
+        console.log("himanshu");
+    }
+
+    //setTimeout(name,2000);
+    //we want to change the text of async code to asynchronous code after 2 sec
+    const changeText = function(){
+        document.querySelector('h1').innerHTML="Aysnchronous code";
+    }
+    const change = setTimeout(changeText,2000);
+
+    // we want to stop the event from happening so we use clearTimeout: it takes reference of that timeout that need to be stopped
+    //e.g : after clicking button of stop then the changetext should not happen 
+    document.querySelector("#stop").addEventListener('click',function(){
+        clearTimeout(change);
+        console.log("stopped");
+
+    })
+
+
+</script>
+</html>
