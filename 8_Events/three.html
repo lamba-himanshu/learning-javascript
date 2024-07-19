@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Set Interval method</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script> 
+
+    // setInterval(function(){
+    //     console.log("himanshu",Date.now());
+    // },1000)
+
+    //or
+    const sayDate = function(str){
+        console.log(str ,"himanshu",Date.now());
+    }
+    //we can pass another arguments also 
+    //setInterval(sayDate,1000,"hello");
+
+    //to stop the setInterval we use clearInterval 
+    //eg : we want when start button is clicked then date start to print and when stop is clciked it should stop
+    let start;
+    const printName = function () {
+        if(!start){
+            start = setInterval(function(){
+            console.log("himanshu");
+        },1000); 
+        }
+    }
+
+    const stopPrint = function (){
+        clearInterval(start);
+        start = null; //flush the satrt value;
+    }
+    document.querySelector("#start").addEventListener('click' , printName);
+
+    document.querySelector("#stop").addEventListener('click',stopPrint);
+    
+</script>
+</html>
