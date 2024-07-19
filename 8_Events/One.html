@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html events</title>
+</head>
+<body>
+    <h1>HTML Events</h1>
+    <div class="container">
+        <ul id="differentImages">
+            <li><img width="100px" id='sheep' src="https://images.pexels.com/photos/26078432/pexels-photo-26078432/free-photo-of-altes-land.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"  alt=""></li>
+            <li><img id='lion' src="https://images.pexels.com/photos/5306143/pexels-photo-5306143.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" width="100px" alt=""></li>
+            <li><img id='camera' src="https://images.pexels.com/photos/12569195/pexels-photo-12569195.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" width="200px" alt="" /*onclick="alert('camera image clicked')"*/></li>
+            <li><img id='bike' src="https://images.pexels.com/photos/6464537/pexels-photo-6464537.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" width=100px" alt=""></li>
+        `   <li><a id="wikipedia" href="https://www.wikipedia.org" >wikipedia</a></li>
+        </ul>
+    </div>
+
+
+
+</body>
+<script>
+    //approach-2
+    // document.getElementById('bike').onclick = function (){
+    //     alert("bike picture clicked");
+    // }
+    //approach-3
+    // document.getElementById('sheep').addEventListener('click', function(e){
+    //     alert("sheep picture clicked");
+    // },false);
+    // document.getElementById('lion').addEventListener('click', function(e){
+    //     console.log(e); //gives different values like pointerevent, height , width etc;
+    // },false);
+
+    //event propagtion : event public - false and event capturing - true
+    //event public
+    // document.getElementById('differentImages').addEventListener('click', function(e){
+    //     //console.log("clicked inside ul");  //when images other than lion is clicked 'clicked inside ul' is printed
+    // },false);
+    // document.getElementById('lion').addEventListener('click', function(e){
+    //     //console.log("lion image clicked");  //but when lion image is clicked then first 'clicked inside ul' is printed and then 'lion image is clicked' is printed
+    // },false);
+
+
+    // //event capturing 
+    // document.getElementById('differentImages').addEventListener('click', function(e){
+    //     console.log("clicked inside ul");  //when images other than lion is clicked 'clicked inside ul' is printed
+    // },true);
+
+    // document.getElementById('lion').addEventListener('click', function(e){
+    //     //console.log("lion image clicked");  //but when lion image is clicked then first 'lion image is clicked' is printed and then 'clicked inside ul' is printed
+    // },true);
+
+    // // to stop event propagation on inner element(no bubbling from down to up)
+
+    // document.getElementById('lion').addEventListener('click', function(e){
+    //     console.log("lion image clicked");  
+    //     e.stopPropagation();
+    // },false);
+
+    // //to stop default behaviour of some element
+    // document.getElementById('wikipedia').addEventListener('click', function(e){
+    //     e.preventDefault(); //stop from going to wikipedia website
+    //     e.stopPropagation(); //to stop event propagation
+    //     console.log("google link clicked");
+
+    // },false);
+
+    document.querySelector('#differentImages').addEventListener('click', function(e){
+        //console.log(e.target);
+        console.log(e.target.parentNode);
+        // let removeElement = e.target.parentNode;
+        // removeElement.remove();  //this will remove the parent element of element that is clicked
+        //this have disadvantage that if li is clciked then whole ul will be deleted as li parent is ul
+        //so we use tagName
+        if(e.target.tagName === 'IMG'){
+            let removeElement = e.target.parentNode;
+            removeElement.remove();
+        }
+        //or
+       //removeElement.parentNode.removeChild(removeElement); //get parent and remove its child
+    },false);
+
+</script>
+</html>
